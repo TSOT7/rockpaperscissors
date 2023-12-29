@@ -78,10 +78,15 @@ function game() {
         } else if (outcome.toLowerCase() == "you lose!") {
             score--;
         }
-
-
     }
 
+    if (score < 2) {
+        console.log("YOU LOSTTT!");
+    }
+
+    else {
+        console.log("YOU WONNJNN!");
+    }
 
 }
 
