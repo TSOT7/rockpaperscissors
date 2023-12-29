@@ -14,8 +14,7 @@ function getComputerChoice() {
     else {
         randomChoice = "Scissors";
     }
-
-
+    
     return randomChoice;
 }
 
