@@ -15,8 +15,53 @@ function getComputerChoice() {
         randomChoice = "Scissors";
     }
 
-    console.log(randomChoice);
+
+    return randomChoice;
 }
 
-getComputerChoice();
+function playRound(playerSelection, computerSelection){
+    computerSelection = getComputerChoice();
+    let message = `Player: ${playerSelection} Computer: ${computerSelection}`;
 
+    console.log(message);
+
+    if (playerSelection.toLowerCase() == "rock") {
+        if(computerSelection.toLowerCase() == "rock") {
+            console.log("Tie!");
+        }
+
+        else if (computerSelection.toLowerCase() == "paper") {
+            console.log("You Lose!");
+        }
+
+        else if (computerSelection.toLowerCase() == "scissors") {
+            console.log("You Win!");
+        }
+    }
+    if (playerSelection.toLowerCase() == "paper") {
+        if(computerSelection.toLowerCase() == "rock") {
+            console.log("You Win!");
+        }
+
+        else if (computerSelection.toLowerCase() == "paper") {
+            console.log("Tie!");
+        }
+
+        else if (computerSelection.toLowerCase() == "scissors") {
+            console.log("You Lose!");
+        }
+    }
+    if (playerSelection.toLowerCase() == "scissors") {
+        if(computerSelection.toLowerCase() == "rock") {
+            console.log("You Lose!");
+        }
+
+        else if (computerSelection.toLowerCase() == "paper") {
+            console.log("You Win!");
+        }
+
+        else if (computerSelection.toLowerCase() == "scissors") {
+            console.log("Tie!");
+        }
+    }
+}
