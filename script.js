@@ -5,62 +5,84 @@ function getComputerChoice() {
 
     if (randomInt == 0) {
         randomChoice = "Rock";
-    }
-
-    else if(randomInt == 1) {
+    } else if(randomInt == 1) {
         randomChoice = "Paper";
-    }
-
-    else {
+    } else {
         randomChoice = "Scissors";
     }
-    
+
     return randomChoice;
 }
 
 function playRound(playerSelection, computerSelection){
     computerSelection = getComputerChoice();
     let message = `Player: ${playerSelection} Computer: ${computerSelection}`;
-
-    console.log(message);
+    let outcome; 
+    
 
     if (playerSelection.toLowerCase() == "rock") {
         if(computerSelection.toLowerCase() == "rock") {
-            console.log("Tie!");
+            outcome = "Tie!";
         }
 
         else if (computerSelection.toLowerCase() == "paper") {
-            console.log("You Lose!");
+            outcome = "You Lose!";
         }
 
         else if (computerSelection.toLowerCase() == "scissors") {
-            console.log("You Win!");
+            outcome = "You Win!";
         }
     }
     if (playerSelection.toLowerCase() == "paper") {
         if(computerSelection.toLowerCase() == "rock") {
-            console.log("You Win!");
+            outcome = "You Win!";
         }
 
         else if (computerSelection.toLowerCase() == "paper") {
-            console.log("Tie!");
+            outcome = "Tie!";
         }
 
         else if (computerSelection.toLowerCase() == "scissors") {
-            console.log("You Lose!");
+            outcome = "You Lose!";
         }
     }
     if (playerSelection.toLowerCase() == "scissors") {
         if(computerSelection.toLowerCase() == "rock") {
-            console.log("You Lose!");
+            outcome = "You Lose!";
         }
 
         else if (computerSelection.toLowerCase() == "paper") {
-            console.log("You Win!");
+            outcome = "You Win!";
         }
 
         else if (computerSelection.toLowerCase() == "scissors") {
-            console.log("Tie!");
+            outcome = "Tie!";
         }
     }
+    console.log(message);
+    console.log(outcome);
+
+    return outcome;
 }
+
+
+function game() {
+    let score = 0;
+
+    for (let i = 0; i <= 4; i++) {
+        let playerSelection = prompt("What will you choose?");
+        let outcome = playRound(playerSelection);
+
+        if( outcome.toLowerCase() == "you win!") {
+            score++;
+        } else if (outcome.toLowerCase() == "you lose!") {
+            score--;
+        }
+
+
+    }
+
+
+}
+
+game();
